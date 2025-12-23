@@ -22,7 +22,7 @@ import (
 )
 
 func GetCommit(t translations.TranslationHelperFunc) inventory.ServerTool {
-	return NewToolWithScopes(
+	return NewTool(
 		ToolsetMetadataRepos,
 		mcp.Tool{
 			Name:        "get_commit",
@@ -121,7 +121,7 @@ func GetCommit(t translations.TranslationHelperFunc) inventory.ServerTool {
 
 // ListCommits creates a tool to get commits of a branch in a repository.
 func ListCommits(t translations.TranslationHelperFunc) inventory.ServerTool {
-	return NewToolWithScopes(
+	return NewTool(
 		ToolsetMetadataRepos,
 		mcp.Tool{
 			Name:        "list_commits",
@@ -230,7 +230,7 @@ func ListCommits(t translations.TranslationHelperFunc) inventory.ServerTool {
 
 // ListBranches creates a tool to list branches in a GitHub repository.
 func ListBranches(t translations.TranslationHelperFunc) inventory.ServerTool {
-	return NewToolWithScopes(
+	return NewTool(
 		ToolsetMetadataRepos,
 		mcp.Tool{
 			Name:        "list_branches",
@@ -318,7 +318,7 @@ func ListBranches(t translations.TranslationHelperFunc) inventory.ServerTool {
 
 // CreateOrUpdateFile creates a tool to create or update a file in a GitHub repository.
 func CreateOrUpdateFile(t translations.TranslationHelperFunc) inventory.ServerTool {
-	return NewToolWithScopes(
+	return NewTool(
 		ToolsetMetadataRepos,
 		mcp.Tool{
 			Name: "create_or_update_file",
@@ -518,7 +518,7 @@ If the SHA is not provided, the tool will attempt to acquire it by fetching the 
 
 // CreateRepository creates a tool to create a new GitHub repository.
 func CreateRepository(t translations.TranslationHelperFunc) inventory.ServerTool {
-	return NewToolWithScopes(
+	return NewTool(
 		ToolsetMetadataRepos,
 		mcp.Tool{
 			Name:        "create_repository",
@@ -625,7 +625,7 @@ func CreateRepository(t translations.TranslationHelperFunc) inventory.ServerTool
 
 // GetFileContents creates a tool to get the contents of a file or directory from a GitHub repository.
 func GetFileContents(t translations.TranslationHelperFunc) inventory.ServerTool {
-	return NewToolWithScopes(
+	return NewTool(
 		ToolsetMetadataRepos,
 		mcp.Tool{
 			Name:        "get_file_contents",
@@ -818,7 +818,7 @@ func GetFileContents(t translations.TranslationHelperFunc) inventory.ServerTool 
 
 // ForkRepository creates a tool to fork a repository.
 func ForkRepository(t translations.TranslationHelperFunc) inventory.ServerTool {
-	return NewToolWithScopes(
+	return NewTool(
 		ToolsetMetadataRepos,
 		mcp.Tool{
 			Name:        "fork_repository",
@@ -918,7 +918,7 @@ func ForkRepository(t translations.TranslationHelperFunc) inventory.ServerTool {
 // The approach implemented here gets automatic commit signing when used with either the github-actions user or as an app,
 // both of which suit an LLM well.
 func DeleteFile(t translations.TranslationHelperFunc) inventory.ServerTool {
-	return NewToolWithScopes(
+	return NewTool(
 		ToolsetMetadataRepos,
 		mcp.Tool{
 			Name:        "delete_file",
@@ -1104,7 +1104,7 @@ func DeleteFile(t translations.TranslationHelperFunc) inventory.ServerTool {
 
 // CreateBranch creates a tool to create a new branch.
 func CreateBranch(t translations.TranslationHelperFunc) inventory.ServerTool {
-	return NewToolWithScopes(
+	return NewTool(
 		ToolsetMetadataRepos,
 		mcp.Tool{
 			Name:        "create_branch",
@@ -1218,7 +1218,7 @@ func CreateBranch(t translations.TranslationHelperFunc) inventory.ServerTool {
 
 // PushFiles creates a tool to push multiple files in a single commit to a GitHub repository.
 func PushFiles(t translations.TranslationHelperFunc) inventory.ServerTool {
-	return NewToolWithScopes(
+	return NewTool(
 		ToolsetMetadataRepos,
 		mcp.Tool{
 			Name:        "push_files",
@@ -1403,7 +1403,7 @@ func PushFiles(t translations.TranslationHelperFunc) inventory.ServerTool {
 
 // ListTags creates a tool to list tags in a GitHub repository.
 func ListTags(t translations.TranslationHelperFunc) inventory.ServerTool {
-	return NewToolWithScopes(
+	return NewTool(
 		ToolsetMetadataRepos,
 		mcp.Tool{
 			Name:        "list_tags",
@@ -1483,7 +1483,7 @@ func ListTags(t translations.TranslationHelperFunc) inventory.ServerTool {
 
 // GetTag creates a tool to get details about a specific tag in a GitHub repository.
 func GetTag(t translations.TranslationHelperFunc) inventory.ServerTool {
-	return NewToolWithScopes(
+	return NewTool(
 		ToolsetMetadataRepos,
 		mcp.Tool{
 			Name:        "get_tag",
@@ -1582,7 +1582,7 @@ func GetTag(t translations.TranslationHelperFunc) inventory.ServerTool {
 
 // ListReleases creates a tool to list releases in a GitHub repository.
 func ListReleases(t translations.TranslationHelperFunc) inventory.ServerTool {
-	return NewToolWithScopes(
+	return NewTool(
 		ToolsetMetadataRepos,
 		mcp.Tool{
 			Name:        "list_releases",
@@ -1658,7 +1658,7 @@ func ListReleases(t translations.TranslationHelperFunc) inventory.ServerTool {
 
 // GetLatestRelease creates a tool to get the latest release in a GitHub repository.
 func GetLatestRelease(t translations.TranslationHelperFunc) inventory.ServerTool {
-	return NewToolWithScopes(
+	return NewTool(
 		ToolsetMetadataRepos,
 		mcp.Tool{
 			Name:        "get_latest_release",
@@ -1724,7 +1724,7 @@ func GetLatestRelease(t translations.TranslationHelperFunc) inventory.ServerTool
 }
 
 func GetReleaseByTag(t translations.TranslationHelperFunc) inventory.ServerTool {
-	return NewToolWithScopes(
+	return NewTool(
 		ToolsetMetadataRepos,
 		mcp.Tool{
 			Name:        "get_release_by_tag",
@@ -2041,7 +2041,7 @@ func resolveDefaultBranch(ctx context.Context, githubClient *github.Client, owne
 
 // ListStarredRepositories creates a tool to list starred repositories for the authenticated user or a specified user.
 func ListStarredRepositories(t translations.TranslationHelperFunc) inventory.ServerTool {
-	return NewToolWithScopes(
+	return NewTool(
 		ToolsetMetadataStargazers,
 		mcp.Tool{
 			Name:        "list_starred_repositories",
@@ -2174,7 +2174,7 @@ func ListStarredRepositories(t translations.TranslationHelperFunc) inventory.Ser
 
 // StarRepository creates a tool to star a repository.
 func StarRepository(t translations.TranslationHelperFunc) inventory.ServerTool {
-	return NewToolWithScopes(
+	return NewTool(
 		ToolsetMetadataStargazers,
 		mcp.Tool{
 			Name:        "star_repository",
@@ -2241,7 +2241,7 @@ func StarRepository(t translations.TranslationHelperFunc) inventory.ServerTool {
 
 // UnstarRepository creates a tool to unstar a repository.
 func UnstarRepository(t translations.TranslationHelperFunc) inventory.ServerTool {
-	return NewToolWithScopes(
+	return NewTool(
 		ToolsetMetadataStargazers,
 		mcp.Tool{
 			Name:        "unstar_repository",
